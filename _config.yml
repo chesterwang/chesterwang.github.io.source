@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 大数据算命工程师的日常
+title: Chester's Hexo
 subtitle:
 description:
 author: Chester Wang
@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://chesterwang.github.io/blog
+url: https://chesterwang.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
