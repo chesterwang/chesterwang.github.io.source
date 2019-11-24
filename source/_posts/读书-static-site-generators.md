@@ -1,19 +1,22 @@
 ---
 title: 读书-static-site-generators
 date: 2018-01-22 20:57:01
-tags: static site generators, cms
 ---
 
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [chapter 1 What are Static sites?](#chapter-1-what-are-static-sites)
-	* [1.1 CMS](#11-cms)
-		* [1.1.1 国内有没有大机构用 Drupal 来构建官网？ https://www.zhihu.com/question/19648357](#111-国内有没有大机构用-drupal-来构建官网-httpswwwzhihucomquestion19648357)
-	* [1.2 dynamic aspects](#12-dynamic-aspects)
-		* [1.2.1 对静态站点添加动态内容的一些服务](#121-对静态站点添加动态内容的一些服务)
-		* [1.2.2 BAAS: backend as a service例子  https://www.zhihu.com/question/22098754 这里给出一些BaaS服务提供商](#122-baas-backend-as-a-service例子-httpswwwzhihucomquestion22098754-这里给出一些baas服务提供商)
+- [chapter 1 What are Static sites?](#chapter-1-What-are-Static-sites)
+  - [1.1 CMS](#11-CMS)
+    - [1.1.1 国内有没有大机构用 Drupal 来构建官网？ https://www.zhihu.com/question/19648357](#111-%E5%9B%BD%E5%86%85%E6%9C%89%E6%B2%A1%E6%9C%89%E5%A4%A7%E6%9C%BA%E6%9E%84%E7%94%A8-Drupal-%E6%9D%A5%E6%9E%84%E5%BB%BA%E5%AE%98%E7%BD%91-httpswwwzhihucomquestion19648357)
+  - [1.2 dynamic aspects](#12-dynamic-aspects)
+    - [1.2.1 对静态站点添加动态内容的一些服务](#121-%E5%AF%B9%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9C%8D%E5%8A%A1)
+    - [1.2.2 BAAS: backend as a service例子 https://www.zhihu.com/question/22098754 这里给出一些BaaS服务提供商](#122-BAAS-backend-as-a-service%E4%BE%8B%E5%AD%90-httpswwwzhihucomquestion22098754-%E8%BF%99%E9%87%8C%E7%BB%99%E5%87%BA%E4%B8%80%E4%BA%9BBaaS%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E5%95%86)
+  - [1.3 defining a static website](#13-defining-a-static-website)
+- [chapter 2 The basics of static site generator](#chapter-2-The-basics-of-static-site-generator)
+  - [2.1 what are static site generator](#21-what-are-static-site-generator)
+- [chapter 3 popular site generators](#chapter-3-popular-site-generators)
 
 <!-- /code_chunk_output -->
 

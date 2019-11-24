@@ -1,7 +1,7 @@
 ---
 title: python logging 模块探索 
 date: 2019-11-25 00:47:41
-tags: python
+categories: python
 ---
 
 `logging` 模块内部的数据结构如下
