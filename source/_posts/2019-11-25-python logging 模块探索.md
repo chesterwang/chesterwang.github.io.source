@@ -4,10 +4,28 @@ date: 2019-11-25 00:47:41
 categories: python
 ---
 
+
+目录
+
+- [1. logging 体系结构](#1-logging-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84)
+- [2. logging 中的数据结构](#2-logging-%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
+- [3. 源码阅读收获](#3-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E6%94%B6%E8%8E%B7)
+
+
+# 1. logging 体系结构
+
+1. Manager 管理Logger的树性体系
+2. Logger 一个Logger实例可以包含多个Handler,底层调用self.callHandlers()方法来处理LogRecord
+3. Handler 一个Handler可以包含多个,Logger.callHandlers()调用的是该类的handle方法
+4. root为Logger树性体系的根logger,任何logger实例都挂靠在该logger(无论间接还是直接)
+
+
+# 2. logging 中的数据结构
+
 `logging` 模块内部的数据结构如下
 
-
 ```python
+# 单条日志消息
 class LogRecord(object):
     """
     A LogRecord instance represents an event being logged.
@@ -15,19 +33,21 @@ class LogRecord(object):
     def getMessage(self):
 ```
 
-_logRecordFactory = LogRecord 将类看成是函数
-
-rv.__dict__.update(dict)
 
 ```python
+#日志格式风格
+
 class PercentStyle(object):
     def format(self, record):
+
 class StrFormatStyle(PercentStyle):
+
 class StringTemplateStyle(PercentStyle):
 ```
 
 
 ```python
+#格式化器
 class Formatter(object):
     """
     Formatter instances are used to convert a LogRecord to text.
@@ -35,22 +55,21 @@ class Formatter(object):
     def formatMessage(self, record):
 ```
 
-
-a formatting string
-
 ```python
+#过滤器
 class Filter(object):
     """
     Filter instances are used to perform arbitrary filtering of LogRecords.
     def filter(self, record):
+    """
+
+#过滤器集合
 class Filterer(object):
     """
     A base class for loggers and handlers which allows them to share
     common code.
     """
 ```
-
-
 
 ```python
 class Handler(Filterer):
@@ -85,6 +104,7 @@ class Manager(object):
     Get a logger with the specified name (channel name), creating it
     if it doesn't yet exist. This name is a dot-separated hierarchical
     name, such as "a", "a.b", "a.b.c" or similar.
+    """
 ```
 
 ```python
@@ -105,11 +125,20 @@ class Logger(Filterer):
     """
 ```
 
+# 3. 源码阅读收获
+
 ```python
-class LoggerAdapter(object):
-    """
-    An adapter for loggers which makes it easier to specify contextual
-    information in logging output.
-    """
-    def __init__(self, logger, extra):
+
+# 类作为变量,构建实例
+(self.loggerClass or _loggerClass)(name)
+
+# 常用变量名
+rv 意为 return value
+
+# 将类看成是函数
+_logRecordFactory = LogRecord 
+
+# 更新各种实例的属性值
+rv.__dict__.update(dict)
 ```
+
